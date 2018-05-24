@@ -8,9 +8,10 @@ class ApplicationController < Sinatra::Base
 			:database => 'wreck_chicago'
 		)
 
+	# Get route for all of the wrecks
 	get '/' do
 		
-		"Hey Hi Howdy Hello!"
+		"Hey, Howdy, Hello!"
 
 	end
 
