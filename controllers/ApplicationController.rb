@@ -33,7 +33,6 @@ class ApplicationController < Sinatra::Base
 		payload_body = request.body.read
 
 		if(payload_body != "")
-			binding.pry
 			@payload = JSON.parse(payload_body).symbolize_keys
 
 		end	
