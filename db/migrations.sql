@@ -5,7 +5,7 @@ CREATE DATABASE wreck_chicago;
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(256) UNIQUE,
-	password VARCHAR(256)
+	password_digest VARCHAR(256)
 );
 
 CREATE TABLE wrecks (
