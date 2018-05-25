@@ -23,7 +23,7 @@ class UserWreckController < ApplicationController
 
 	end
 
-  # Post route to add a wreck to the DB
+  # Post route to add a wreck to the user's list of wrecks
 
   post '/' do
 
@@ -36,5 +36,21 @@ class UserWreckController < ApplicationController
     }.to_json
 
   end
+
+  # Delete route to remove a wreck from the user's list of wrecks
+
+  delete '/:id' do
+
+    deleteWreck = UserWreck.find params[:id]
+    deleteWreck.destroy
+
+    {
+      success: true,
+      message: "Delete #{deleteWreck.id} successful."
+    }.to_json
+
+  end
+
+
 
 end
