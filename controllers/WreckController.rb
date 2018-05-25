@@ -13,10 +13,23 @@ class WreckController < ApplicationController
 	# Get route for all of the wrecks
 	get '/' do
 		
-		@wrecks = Wreck.all
-		@wrecks.to_json
+		allWrecks = Wreck.all
+		allWrecks.to_json
 
 	end
+
+	# Post route to add a wreck
+
+	post '/' do
+
+		newWreck = Wreck.create name:@payload[:name], latitude:@payload[:latitude], longitude:@payload[:longitude], depth:@payload[:depth], description:@payload[:description], image:@payload[:image]
+
+		{
+			success: true,
+			added_wreck: newWreck,
+			message: "Added wreck to the database."
+		}.to_json
+	end	
 
 end
 

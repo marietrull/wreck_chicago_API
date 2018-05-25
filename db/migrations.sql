@@ -15,7 +15,7 @@ CREATE TABLE wrecks (
 	longitude INT,
 	depth INT,
 	description TEXT,
-	image VARCHAR (256)
+	image VARCHAR (256),
 );
 
 CREATE TABLE user_wrecks (
