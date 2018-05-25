@@ -18,7 +18,7 @@ class WreckController < ApplicationController
 
 	end
 
-	# Post route to add a wreck
+	# Post route to add a wreck to the DB
 
 	post '/' do
 
@@ -29,6 +29,22 @@ class WreckController < ApplicationController
 			added_wreck: newWreck,
 			message: "Added wreck to the database."
 		}.to_json
+	end	
+
+	# Delete route to remove a wreck from the DB
+
+	delete '/:id' do
+
+		deleteWreck = Wreck.find params[:id]
+
+		deleteWreck.destroy
+
+		{
+			success: true,
+
+			message: "Delete #{deleteWreck.name} successful."
+		}.to_json
+
 	end	
 
 end
