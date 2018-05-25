@@ -13,7 +13,7 @@ class WreckController < ApplicationController
 	# Get route for all of the wrecks
 	get '/' do
 		
-		allWrecks = Wreck.all
+		allWrecks = Wreck.all.order(:id)
 		allWrecks.to_json
 
 	end
@@ -36,15 +36,32 @@ class WreckController < ApplicationController
 	delete '/:id' do
 
 		deleteWreck = Wreck.find params[:id]
-
 		deleteWreck.destroy
 
 		{
 			success: true,
-
 			message: "Delete #{deleteWreck.name} successful."
 		}.to_json
 
+	end	
+
+	# Edit route for a wreck by id
+	put '/:id' do
+
+		editWreck = Wreck.find params[:id]
+		editWreck.name = @payload[:name]
+		editWreck.latitude = @payload[:latitude]
+		editWreck.longitude = @payload[:longitude]
+		editWreck.depth = @payload[:depth]
+		editWreck.description = @payload[:description]
+		editWreck.image = @payload[:image]
+		editWreck.save
+
+		{
+			success: true,
+			edited_wreck: editWreck,
+			message: "Updated Wreck."
+		}.to_json
 	end	
 
 end
