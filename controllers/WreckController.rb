@@ -64,6 +64,19 @@ class WreckController < ApplicationController
 		}.to_json
 	end	
 
+	# Show route for wreck by id
+
+	get '/:id' do
+
+		showWreck = Wreck.find params[:id]
+		{
+			success: true,
+			show_wreck: showWreck,
+			message: "Found #{showWreck.name}"
+		}.to_json
+
+	end
+
 end
 
 
