@@ -14,7 +14,12 @@ class WreckController < ApplicationController
 	get '/' do
 		
 		allWrecks = Wreck.all.order(:id)
-		allWrecks.to_json
+
+		{
+			success: true,
+			message: "Found #{allWrecks.length} wreck(s).",
+			allWrecks: allWrecks
+		}.to_json
 
 	end
 

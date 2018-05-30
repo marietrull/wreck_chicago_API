@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 			:database => 'wreck_chicago'
 	)
 
-	# Middleware
+	register Sinatra::CrossOrigin
 
 
 	# => Cookie
