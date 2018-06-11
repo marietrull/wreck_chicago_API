@@ -11,9 +11,28 @@ class UserWreckController < ApplicationController
   	
   end	
 
+    # Get route to get all of the user_wrecks by userid
+
+  get '/' do
+    #Find the user
+      user = User.find_by :username => session[:username]
+      userID = user.id
+
+
+    #Find all user_wrecks with a matching id
+      userWrecks = UserWreck.where(user_id: user.id)
+    #return json
+      {
+        success: true,
+        message: "Found #{userWrecks.length} wreck(s).}",
+        userWrecks: userWrecks
+      }.to_json
+
+  end
+
   # Get route to get all of the user_wrecks by userid
 
-	get '/' do
+	get '/mywrecks' do
     #Find the user
       user = User.find_by :username => session[:username]
 

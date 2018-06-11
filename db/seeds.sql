@@ -1,14 +1,4 @@
-INSERT INTO wrecks (name, latitude, longitude, depth) VALUES ('Marie', 150, 150, 50);
-
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (1,2);
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (1,3);
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (1,4);
-
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (2,1);
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (2,2);
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (2,3);
-
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (3,4);
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (3,2);
-INSERT INTO user_wrecks (user_id, wreck_id) VALUES (3,6);
-
+INSERT INTO wrecks (name, latitude, longitude, depth, image, description) VALUES ('The Straights of Mackinaw', '42° 2.73 N','87° 30.888 W', 100,'https://i.imgur.com/IXrDGw2.jpg', 'Steel ferry purposefully sunk in 2003. The deepest part of the wreck lies 100 feet below the surface, with a shallow area around 30 feet.');
+INSERT INTO wrecks (name, latitude, longitude, depth, image, description) VALUES ('Wells Burt', '42° 2.748 N,','87° 37.082 W', 33, 'https://i.imgur.com/ZOdtf9z.jpg', 'Wooden ship built in 1873 that was used for transport purposes.');
+INSERT INTO wrecks (name, latitude, longitude, depth, description) VALUES ('Flora M. Hill', '41.85003', '-87.65005', 36, 'Cargo ship that was crushed by ice. In 1913 the Army Corps had to dynamite the ship because she posed a hazard to navigation. At the time of her sinking, her cargo was full of automotive lamps made of solid brass.');
+INSERT INTO wrecks (name, latitude, longitude, depth, description) VALUES ('Lady Elgin', '42° 10 60.00" N', '-87° 38 59.99" W', 55, 'Wooden-hulled sidewheel steamship that sank after colliding with the schooner Augusta. After what was deemed "one of the greatest marine horros on record", a new rule was implemented requiring sailing vessels to carry running lights.');

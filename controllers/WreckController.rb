@@ -13,7 +13,7 @@ class WreckController < ApplicationController
 	# Get route for all of the wrecks
 	get '/' do
 		
-		allWrecks = Wreck.all.order(:id)
+		allWrecks = Wreck.all.order(:name)
 
 		{
 			success: true,
@@ -40,13 +40,14 @@ class WreckController < ApplicationController
 
 	delete '/:id' do
 
-		deleteWreck = Wreck.find params[:id]
-		deleteWreck.destroy
+		delete_wreck = Wreck.find params[:id]
 
-		{
-			success: true,
-			message: "Delete #{deleteWreck.name} successful."
-		}.to_json
+		 	delete_wreck.destroy
+
+			{
+				success: true,
+				message: "Delete #{delete_wreck.name} successful."
+			}.to_json
 
 	end	
 

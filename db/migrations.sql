@@ -11,16 +11,16 @@ CREATE TABLE users (
 CREATE TABLE wrecks (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(256),
-	latitude INT,
-	longitude INT,
-	depth INT,
+	latitude VARCHAR(256),
+	longitude VARCHAR(256),
+	depth VARCHAR(256),
 	description TEXT,
-	image VARCHAR (256),
+	image VARCHAR (256)
 );
 
 CREATE TABLE user_wrecks (
 	id SERIAL PRIMARY KEY,
 	user_id INT REFERENCES users(id),
-	wreck_id INT REFERENCES wrecks(id),
+	wreck_id INT REFERENCES wrecks(id) ON DELETE CASCADE,
 	notes TEXT
 );
