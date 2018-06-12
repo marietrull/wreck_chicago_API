@@ -2,12 +2,13 @@ class ApplicationController < Sinatra::Base
 
 	require 'bundler'
 	Bundler.require()
-	enable :sessons
+	
+	require './Config/environments'
 
-	ActiveRecord::Base.establish_connection(
-			:adapter => 'postgresql',
-			:database => 'wreck_chicago'
-	)
+	# ActiveRecord::Base.establish_connection(
+	# 		:adapter => 'postgresql',
+	# 		:database => 'wreck_chicago'
+	# )
 
 	register Sinatra::CrossOrigin
 
